@@ -17,8 +17,13 @@ resource "aws_instance" "app_server" {
   ami           = "ami-03f65b8614a860c29"
   instance_type = "t2.micro"
   key_name = "mich_labs"
-
+  # user_data = <<-EOF
+  #               #!/bin/bash
+  #               cd /home/ubuntu
+  #               echo “<h1>Mensagem a ser mostrada</h1>” > index.html
+  #               nohup busybox httpd -f -p 8080 &
+  #               EOF
   tags = {
-    Name = "ExampleAppServerInstance"
+    Name = "terraform Ansible Python"
   }
 }
